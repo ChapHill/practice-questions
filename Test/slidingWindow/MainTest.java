@@ -25,4 +25,12 @@ class MainTest {
         assertEquals(3, smallestSubarrayGivenSum(new int[] {3, 4, 1, 1, 6}, 8));
         assertEquals(0, smallestSubarrayGivenSum(new int[] {3, 4, 1, 1, 6}, 100));
     }
+
+    @Test
+    void test4() {
+        assertEquals(4, longestSubstringKDistinct("araaci", 2));
+        assertEquals(2, longestSubstringKDistinct("araaci", 1));
+        assertEquals(5, longestSubstringKDistinct("cbbebi", 3));
+
+    }
 }

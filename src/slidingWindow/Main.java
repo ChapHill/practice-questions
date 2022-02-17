@@ -1,4 +1,7 @@
 package slidingWindow;
+
+import java.util.HashMap;
+
 /**
  * In problems when dealing with a contiguous array or list of a given size,
  * sliding window shines
@@ -47,6 +50,33 @@ public class Main {
         }
 
         return smallest == Integer.MAX_VALUE ? 0 : smallest;
+    }
+
+
+    //given a string, find the length of the longest substring in it with no more
+    //than K distinct characters
+    public static int longestSubstringKDistinct(String s, int k) {
+        int left = 0;
+        int max = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for(int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+
+            while(map.size() > k) {
+                char leftChar = s.charAt(left);
+                map.put(leftChar, map.get(leftChar) - 1);
+
+                if(map.get(leftChar) == 0) {
+                    map.remove(leftChar);
+                }
+                left++;
+            }
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
     }
 
 }
