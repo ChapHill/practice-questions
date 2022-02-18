@@ -62,7 +62,13 @@ public class Main {
 
         for(int right = 0; right < s.length(); right++) {
             char c = s.charAt(right);
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            //map.put(c, map.getOrDefault(c, 0) + 1);
+            //or --->
+            if(map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
 
             while(map.size() > k) {
                 char leftChar = s.charAt(left);
