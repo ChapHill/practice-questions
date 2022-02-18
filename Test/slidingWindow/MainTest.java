@@ -31,6 +31,13 @@ class MainTest {
         assertEquals(4, longestSubstringKDistinct("araaci", 2));
         assertEquals(2, longestSubstringKDistinct("araaci", 1));
         assertEquals(5, longestSubstringKDistinct("cbbebi", 3));
+    }
+
+    @Test
+    void test5() {
+        assertEquals(3, fruitsIntoBaskets(new char[] {'A', 'B', 'C', 'A', 'C'}));
+        assertEquals(5, fruitsIntoBaskets(new char[] {'A', 'B', 'C', 'B', 'B', 'C'}));
+        assertEquals(5, fruitsIntoBaskets(new char[] {'A','A','A','B','C','B','B','C','A','A','Z'}));
 
     }
 }

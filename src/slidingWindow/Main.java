@@ -1,6 +1,7 @@
 package slidingWindow;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * In problems when dealing with a contiguous array or list of a given size,
@@ -79,6 +80,32 @@ public class Main {
                 }
                 left++;
             }
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
+    }
+
+
+    public static int fruitsIntoBaskets(char[] arr) {
+        int left = 0;
+        int max = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(int right = 0; right < arr.length; right++) {
+            char c = arr[right];
+            map.put(c, map.getOrDefault(c, 0) + 1);
+
+            while(map.size() > 2) {
+                char leftChar = arr[left];
+                map.put(leftChar, map.get(leftChar) - 1);
+
+                if(map.get(leftChar) == 0) {
+                    map.remove(leftChar);
+                }
+
+                left++;
+            }
+
             max = Math.max(max, right - left + 1);
         }
 
