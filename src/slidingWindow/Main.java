@@ -121,6 +121,8 @@ public class Main {
             char c = s.charAt(right);
 
             if(map.containsKey(c)) {
+                //the character already exists within the map. At this point we need
+                //to find where to put the left index.
                 left = Math.max(left, map.get(c) + 1);
             }
 
