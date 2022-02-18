@@ -38,6 +38,12 @@ class MainTest {
         assertEquals(3, fruitsIntoBaskets(new char[] {'A', 'B', 'C', 'A', 'C'}));
         assertEquals(5, fruitsIntoBaskets(new char[] {'A', 'B', 'C', 'B', 'B', 'C'}));
         assertEquals(5, fruitsIntoBaskets(new char[] {'A','A','A','B','C','B','B','C','A','A','Z'}));
+    }
 
+    @Test
+    void test6() {
+        assertEquals(3, noRepeatSubstring("aabccbb"));
+        assertEquals(2, noRepeatSubstring("abbbb"));
+        assertEquals(3, noRepeatSubstring("abccde"));
     }
 }
