@@ -46,4 +46,11 @@ class MainTest {
         assertEquals(2, noRepeatSubstring("abbbb"));
         assertEquals(3, noRepeatSubstring("abccde"));
     }
+
+    @Test
+    void test7() {
+        assertEquals(5, longestSubstringAfterReplace("aabccbb", 2));
+        assertEquals(4, longestSubstringAfterReplace("abbcb", 1));
+        assertEquals(3, longestSubstringAfterReplace("abccde", 1));
+    }
 }

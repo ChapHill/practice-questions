@@ -133,4 +133,29 @@ public class Main {
         return max;
     }
 
+    public static int longestSubstringAfterReplace(String s, int k) {
+        int left = 0;
+        int max = 0;
+        int maxRepeat = 0;
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for(int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            maxRepeat = Math.max(maxRepeat, map.get(c));
+
+            if(right - left + 1 - maxRepeat > k) {
+                char leftChar = s.charAt(left);
+                map.put(leftChar, map.get(leftChar) - 1);
+                left++;
+            }
+
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
+    }
+
 }
