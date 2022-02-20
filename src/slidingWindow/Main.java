@@ -138,6 +138,8 @@ public class Main {
         int max = 0;
         int maxRepeat = 0;
 
+        //could also use a character array to track letters since letters
+        //of the alphabet are finite
         HashMap<Character, Integer> map = new HashMap<>();
 
         for(int right = 0; right < s.length(); right++) {
