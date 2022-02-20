@@ -53,4 +53,10 @@ class MainTest {
         assertEquals(4, longestSubstringAfterReplace("abbcb", 1));
         assertEquals(3, longestSubstringAfterReplace("abccde", 1));
     }
+
+    @Test
+    void test8() {
+        assertEquals(6, longestSubarrayWithOnesReplace(new int[] {0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1}, 2));
+        assertEquals(9, longestSubarrayWithOnesReplace(new int[] {0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1}, 3));
+    }
 }

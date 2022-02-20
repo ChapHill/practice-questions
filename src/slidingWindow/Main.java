@@ -160,4 +160,31 @@ public class Main {
         return max;
     }
 
+    public static int longestSubarrayWithOnesReplace(int[] arr, int k) {
+        int left = 0;
+        int max = 0;
+        int maxOnes = 0;
+
+        for(int right = 0; right < arr.length; right++) {
+            if(arr[right] == 1) {
+                maxOnes++;
+            }
+
+            if(right - left + 1 - maxOnes > k) {
+                if(arr[left] == 1) {
+                    maxOnes--;
+                }
+                left++;
+            }
+
+            max = Math.max(right - left + 1, max);
+        }
+
+        return max;
+    }
+
+    public static boolean permutationsInString(String s) {
+        return false;
+    }
+
 }
