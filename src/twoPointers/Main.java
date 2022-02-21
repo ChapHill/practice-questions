@@ -22,4 +22,19 @@ public class Main {
         //pair not found
         return new int[] {0, 0};
     }
+
+    //given array of sorted numbers remove all duplicates and do it in place
+    //do not use extra space
+    //return the 'length' of the new array
+    public static int removeDuplicates(int[] arr) {
+        int next = 1;
+
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[next-1] != arr[i]) {
+                arr[next++] = arr[i];
+            }
+        }
+
+        return next;
+    }
 }
