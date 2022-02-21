@@ -27,14 +27,15 @@ public class Main {
     //do not use extra space
     //return the 'length' of the new array
     public static int removeDuplicates(int[] arr) {
-        int next = 1;
+        int i = 0;
 
-        for(int i = 1; i < arr.length; i++) {
-            if(arr[next-1] != arr[i]) {
-                arr[next++] = arr[i];
+        for(int j = 1; j < arr.length; j++) {
+            if(arr[j] != arr[i]) {
+                i++;
+                arr[i] = arr[j];
             }
         }
 
-        return next;
+        return i+1;
     }
 }
