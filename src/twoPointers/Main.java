@@ -38,4 +38,23 @@ public class Main {
 
         return i+1;
     }
+
+    public static int[] squareSortedArray(int[] arr) {
+        int[] ret = new int[arr.length];
+        int i = 0;
+        int j = arr.length-1;
+        int k = 0;
+
+        while(i <= j) {
+            if(Math.abs(arr[i]) > Math.abs(arr[j])) {
+                ret[k++] = arr[i] * arr[i];
+                i++;
+            } else {
+                ret[k++] = arr[j] * arr[j];
+                j--;
+            }
+        }
+
+        return ret;
+    }
 }
