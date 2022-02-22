@@ -43,14 +43,14 @@ public class Main {
         int[] ret = new int[arr.length];
         int i = 0;
         int j = arr.length-1;
-        int k = 0;
+        int k = ret.length-1;
 
         while(i <= j) {
             if(Math.abs(arr[i]) > Math.abs(arr[j])) {
-                ret[k++] = arr[i] * arr[i];
+                ret[k--] = arr[i] * arr[i];
                 i++;
             } else {
-                ret[k++] = arr[j] * arr[j];
+                ret[k--] = arr[j] * arr[j];
                 j--;
             }
         }

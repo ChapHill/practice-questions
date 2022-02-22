@@ -18,4 +18,10 @@ class MainTest {
         assertEquals(4, removeDuplicates(new int[] {2, 3, 3, 3, 6, 9, 9}));
         assertEquals(2, removeDuplicates(new int[] {2, 2, 2, 11}));
     }
+
+    @Test
+    void test3() {
+        assertArrayEquals(new int[] {0, 1, 4, 4, 9}, squareSortedArray(new int[] {-2, -1, 0, 2, 3}));
+        assertArrayEquals(new int[] {0, 1, 1, 4, 9}, squareSortedArray(new int[] {-3, -1, 0, 1, 2}));
+    }
 }
