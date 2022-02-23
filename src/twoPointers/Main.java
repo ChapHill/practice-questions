@@ -1,6 +1,14 @@
 package twoPointers;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
+
+    public static void main(String[] args) {
+        threeSum(new int[] {-3, 0, 1, 2, -1, 1, -2});
+    }
 
     //given an array of sorted nums and a target sum... find the pair in the array
     //that add up to the target sum and return their indicies.
@@ -56,5 +64,57 @@ public class Main {
         }
 
         return ret;
+    }
+
+    //return a list of lists containing all the possible combinations of
+    //3 numbers to sum to zero... do not include duplicate entries
+    public static List<List<Integer>> threeSum(int[] array) {
+        Arrays.sort(array);
+        List<List<Integer>> list = new LinkedList<>();
+
+        for(int i = 0; i < array.length-2; i++) {
+            if(i == 0 || i > 0 && array[i] != array[i-1]) {
+                int low = i + 1;
+                int high = array.length-1;
+                int sum = 0 - array[i];
+
+                while(low < high) {
+                    if(array[low] + array[high] == sum) {
+                        list.add(Arrays.asList(array[i], array[low], array[high]));
+
+                        while(low < high && array[low] == array[low+1]) {
+                            low++;
+                        }
+
+                        while(low < high && array[high] == array[high-1]) {
+                            high--;
+                        }
+
+                        low++;
+                        high--;
+                    } else if(array[low] + array[high] < sum) {
+                        low++;
+                    } else {
+                        high--;
+                    }
+                }
+            }
+        }
+
+        return list;
+    }
+
+    public static int threeSumClosestToTarget(int[] arr, int target) {
+        Arrays.sort(arr);
+        int close = Integer.MAX_VALUE;
+
+        for(int i = 0; i < arr.length - 2; i++) {
+            int j = i + 1;
+            int k = arr.length-1;
+            while(j < k) {
+            }
+        }
+
+        return close;
     }
 }

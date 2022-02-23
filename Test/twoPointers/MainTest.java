@@ -2,6 +2,9 @@ package twoPointers;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static twoPointers.Main.*;
 
@@ -23,5 +26,17 @@ class MainTest {
     void test3() {
         assertArrayEquals(new int[] {0, 1, 4, 4, 9}, squareSortedArray(new int[] {-2, -1, 0, 2, 3}));
         assertArrayEquals(new int[] {0, 1, 1, 4, 9}, squareSortedArray(new int[] {-3, -1, 0, 1, 2}));
+    }
+
+    @Test
+    void test4() {
+
+    }
+
+    @Test
+    void test5() {
+        assertEquals(1, threeSumClosestToTarget(new int[] {-2, 0, 1, 2}, 2));
+        assertEquals(0, threeSumClosestToTarget(new int[] {-3, -1, 1, 2}, 1));
+        assertEquals(3, threeSumClosestToTarget(new int[] {1, 0, 1, 1}, 100));
     }
 }
