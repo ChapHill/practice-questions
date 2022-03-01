@@ -130,4 +130,30 @@ public class Main {
         return close;
 
     }
+
+    public static int threeSumSmallerThanTarget(int[] arr, int target) {
+        Arrays.sort(arr);
+        int count = 0;
+
+        for(int i = 0; i < arr.length-2; i++) {
+            int low = i + 1;
+            int high = arr.length-1;
+
+            while(low < high) {
+                int potential = arr[i] + arr[low] + arr[high];
+
+                if(potential < target) {
+                    count += high - low;
+                }
+
+                if(potential < target) {
+                    low++;
+                } else {
+                    high--;
+                }
+            }
+        }
+
+        return count;
+    }
 }

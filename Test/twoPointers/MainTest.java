@@ -39,4 +39,10 @@ class MainTest {
         assertEquals(0, threeSumClosestToTarget(new int[] {-3, -1, 1, 2}, 1));
         assertEquals(3, threeSumClosestToTarget(new int[] {1, 0, 1, 1}, 100));
     }
+
+    @Test
+    void test6() {
+        assertEquals(2, threeSumSmallerThanTarget(new int[] {-1, 0, 2, 3}, 3));
+        assertEquals(4, threeSumSmallerThanTarget(new int[] {-1, 4, 2, 1, 3}, 5));
+    }
 }
