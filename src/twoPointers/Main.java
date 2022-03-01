@@ -35,16 +35,16 @@ public class Main {
     //do not use extra space
     //return the 'length' of the new array
     public static int removeDuplicates(int[] arr) {
-        int i = 0;
-
-        for(int j = 1; j < arr.length; j++) {
-            if(arr[j] != arr[i]) {
-                i++;
-                arr[i] = arr[j];
+        int curr = 1;
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] == arr[i-1]) {
+                continue;
+            } else {
+                arr[curr++] = arr[i];
             }
         }
 
-        return i+1;
+        return curr;
     }
 
     public static int[] squareSortedArray(int[] arr) {
@@ -106,15 +106,28 @@ public class Main {
 
     public static int threeSumClosestToTarget(int[] arr, int target) {
         Arrays.sort(arr);
-        int close = Integer.MAX_VALUE;
+        int close = arr[0] + arr[1] + arr[2];
 
-        for(int i = 0; i < arr.length - 2; i++) {
-            int j = i + 1;
-            int k = arr.length-1;
-            while(j < k) {
+        for(int i = 0; i < arr.length-2; i++) {
+            int low = i + 1;
+            int high = arr.length-1;
+
+            while(low < high) {
+                int potential = arr[i] + arr[low] + arr[high];
+
+                if(Math.abs(potential - target) < Math.abs(close - target)) {
+                    close = potential;
+                }
+
+                if(arr[i] + arr[low] + arr[high] < target) {
+                    low++;
+                } else {
+                    high--;
+                }
             }
         }
 
         return close;
+
     }
 }
