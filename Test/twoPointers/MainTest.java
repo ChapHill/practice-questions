@@ -45,4 +45,10 @@ class MainTest {
         assertEquals(2, threeSumSmallerThanTarget(new int[] {-1, 0, 2, 3}, 3));
         assertEquals(4, threeSumSmallerThanTarget(new int[] {-1, 4, 2, 1, 3}, 5));
     }
+
+    @Test
+    void test7() {
+        assertArrayEquals(new int[] {0,0,1,1,2}, dutchNationalFlag(new int[] {1, 0, 2, 1, 0}));
+        assertArrayEquals(new int[] {0,0,1,2,2,2}, dutchNationalFlag(new int[] {2, 2, 0, 1, 2, 0}));
+    }
 }
